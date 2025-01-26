@@ -43,7 +43,7 @@ namespace CubePeople
                 StartCoroutine("RotateAroundTarget", -45);
             }
         }
-        /*
+        
         void LateUpdate()
         {
             if (camRotation)
@@ -52,7 +52,7 @@ namespace CubePeople
                 print("LookatRotation");
             }
         }
-        */
+        
         void MoveWithTarget()
         {
             targetPos = target.transform.position + offsetPos;
