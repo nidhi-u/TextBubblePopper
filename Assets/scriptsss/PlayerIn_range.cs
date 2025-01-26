@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PlayerIn_range : MonoBehaviour
 {
-    
-    [SerializeField] Camera _camera;
+    [SerializeField] GameObject minigameButton_;
 
+    private void Start()
+    {
+        minigameButton_.SetActive(false);
+    }
     private void OnTriggerEnter(Collider other)
     {
-        _camera.orthographicSize = 4;
+        minigameButton_.SetActive(true);
     }
     private void OnTriggerExit(Collider other)
     {
-        _camera.orthographicSize = 8.7f;
+        minigameButton_.SetActive(false);
     }
+
 }
