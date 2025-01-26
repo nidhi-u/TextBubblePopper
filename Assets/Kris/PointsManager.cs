@@ -6,31 +6,40 @@ public class PointsManager : MonoBehaviour
 {
     private int _points;
     [SerializeField]
-    private int _increment;
+    private int _increment = 10;
+    [SerializeField]
+    private int _multiplier = 1;
+    [SerializeField]
+    private int _max = 100;
 
-    public delegate void PointsUpdatedHandler(int currentPoints);
+    public delegate void PointsUpdatedHandler();
     public event PointsUpdatedHandler OnPointsUpdated;
+
     // Start is called before the first frame update
     void Start()
     {
         _points = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    void UpdatePoints(int value)
     {
-        
+        _points += value;
+        OnPointsUpdated?.Invoke();
     }
 
-    void updatePoints()
+    public void ModifyPoints(bool increase)
     {
-        _points += _increment;
-
-
+        int changeAmount = increase ? _increment : -_increment;
+        UpdatePoints(_multiplier* changeAmount);
     }
 
     public int GetPoints()
     {
         return _points;
+    }
+
+    public int GetMax()
+    {
+        return _max;
     }
 }
