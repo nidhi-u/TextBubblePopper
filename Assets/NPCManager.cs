@@ -27,6 +27,7 @@ public class NPCManager : MonoBehaviour
                 interacted.Add(index);
             }
             //yield return null;
+            // activate after first minigame is done
             yield return new WaitForSeconds(2);
         }
         EndGame();
