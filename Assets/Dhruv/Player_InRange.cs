@@ -6,8 +6,9 @@ public class Player_InRange : MonoBehaviour
 {
     [SerializeField] GameObject MiniGame_;
     [SerializeField] GameObject MiniGame;
-
+    [SerializeField] ConvoManager convo;
     private bool InRange;
+
     void Start()
     {
         MiniGame_.gameObject.SetActive(false);
