@@ -14,10 +14,10 @@ public class ConvoManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < convoSO.Conversations.Count; i++)
-        {
-            UnityEngine.Debug.Log(convoSO.Conversations[i]);
-        }
+        //for(int i = 0; i < convoSO.Conversations.Count; i++)
+        //{
+        //    UnityEngine.Debug.Log(convoSO.Conversations[i]);
+        //}
         StartCoroutine(PlayConvo());
     }
 
