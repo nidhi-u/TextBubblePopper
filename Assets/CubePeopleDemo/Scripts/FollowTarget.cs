@@ -19,6 +19,15 @@ namespace CubePeople
         Vector3 targetPos;
         bool smoothRotating = false;
 
+        public float mouseSensitivity = 3f;
+        private float rotationX = 0f;
+        private float rotationY = 0f;
+
+        private void Start()
+        {
+            rotationX = transform.eulerAngles.x;
+            rotationY = transform.eulerAngles.y;
+        }
 
         void Update()
         {
@@ -30,18 +39,19 @@ namespace CubePeople
             }
             else
             {
+                //RotateWithMouse();
                 LookatRotation();
             }
 
-            if (Input.GetKeyDown(KeyCode.G) && !smoothRotating)
-            {
-                StartCoroutine("RotateAroundTarget", 45);
-            }
+            //if (Input.GetKeyDown(KeyCode.G) && !smoothRotating)
+            //{
+            //    StartCoroutine("RotateAroundTarget", 45);
+            //}
 
-            if (Input.GetKeyDown(KeyCode.H) && !smoothRotating)
-            {
-                StartCoroutine("RotateAroundTarget", -45);
-            }
+            //if (Input.GetKeyDown(KeyCode.H) && !smoothRotating)
+            //{
+            //    StartCoroutine("RotateAroundTarget", -45);
+            //}
         }
         
         void LateUpdate()
@@ -63,6 +73,21 @@ namespace CubePeople
         {
             targetRotation = Quaternion.LookRotation(target.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+        }
+
+        void RotateWithMouse()
+        {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+
+            rotationY += mouseX;
+            rotationX -= mouseY;
+            rotationX = Mathf.Clamp(rotationX, -30f, 60f);
+
+            Quaternion mouseRotation = Quaternion.Euler(rotationX, rotationY, 0);
+            transform.position = target.position - (mouseRotation * offsetPos);
+
+            transform.LookAt(target);
         }
 
         void LookatRotation()

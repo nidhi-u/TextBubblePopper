@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CubePeople
@@ -18,6 +19,13 @@ namespace CubePeople
 
         FollowTarget ft;
 
+        private bool isJumping = false;
+        private float jumpStartY = 0;
+        private float jumpCooldown = 1f;
+        private float jumpTimer = 5f;
+        private float jumpHeight = 2f;
+        private float jumpSpeed = 3f;
+
         void Start()
         {
             //cam = Camera.main.transform;
@@ -25,12 +33,25 @@ namespace CubePeople
             {
                 ft = cam.GetComponent<FollowTarget>();
             }
-
         }
 
         void Update()
         {
             GetInput();
+
+            
+
+            if (Input.GetButtonDown("Jump") && !isJumping)
+            {
+                Debug.Log("Trying to jump");
+                StartJump();
+            }
+            if (isJumping)
+            {
+                PerformJump();
+            }
+
+            
 
             if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.y) < 1) return;
 
@@ -38,6 +59,28 @@ namespace CubePeople
             Rotate();
             Move();
 
+            
+        }
+           
+        void StartJump()
+        {
+            isJumping = true;
+            //jumpStartY = transform.position.y;
+            jumpTimer = 0f;
+        }
+        
+
+        void PerformJump()
+        {
+            if(jumpTimer < jumpCooldown - 0.5f)
+            {
+                transform.position += Vector3.up * jumpSpeed * Time.deltaTime;
+                jumpTimer += Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false;
+            }
         }
 
         void GetInput()
