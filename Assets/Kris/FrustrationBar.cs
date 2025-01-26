@@ -53,7 +53,6 @@ public class FrustrationBar : MonoBehaviour
         yield return null;
     }
 
-    //assumes line renderer color only has 2 ColorKeys
     void AssignColorAtPercent(float percent)
     {
         Color currentColor = _colorGradient.Evaluate(percent);

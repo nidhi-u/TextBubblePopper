@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Kris/StartMenu.unity
+    guid: 93f4a96b513c8da45add4c7c7c2fdf0b
+  - enabled: 1
+    path: Assets/Kris/KrisScene.unity
+    guid: a2cf9c095dd2e264080460c92f386474
   m_configObjects: {}

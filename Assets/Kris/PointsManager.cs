@@ -15,6 +15,9 @@ public class PointsManager : MonoBehaviour
     public delegate void PointsUpdatedHandler();
     public event PointsUpdatedHandler OnPointsUpdated;
 
+    public delegate void PointsThresholdHandler();
+    public event PointsThresholdHandler OnPointsThreshold;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,10 @@ public class PointsManager : MonoBehaviour
     void UpdatePoints(int value)
     {
         _points += value;
+        if (_points >= _max)
+        {
+            OnPointsThreshold?.Invoke();
+        }
         OnPointsUpdated?.Invoke();
     }
 
