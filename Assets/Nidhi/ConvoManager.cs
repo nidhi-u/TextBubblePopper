@@ -18,6 +18,11 @@ public class ConvoManager : MonoBehaviour
         //{
         //    UnityEngine.Debug.Log(convoSO.Conversations[i]);
         //}
+        text.text = "...";
+    }
+
+    public void StartConvo()
+    {
         StartCoroutine(PlayConvo());
     }
 
