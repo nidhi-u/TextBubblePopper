@@ -8,10 +8,12 @@ public class MiniGame_Manager : MonoBehaviour
 {
     public static MiniGame_Manager Instance;
 
-    public Image lineRendererPrefab;
-    private Image currentLine;
+    public LineRenderer lineRendererPrefab;
+    private LineRenderer currentLine;
     private Bubble selectedBubble;
     private List<Bubble> bubbles = new List<Bubble>();
+
+    public Camera uiCamera;
 
     private void Awake()
     {
@@ -23,6 +25,8 @@ public class MiniGame_Manager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        //uiCamera = Camera.main;
     }
 
     private void Start()
@@ -34,8 +38,9 @@ public class MiniGame_Manager : MonoBehaviour
     public void SelectBubble(Bubble bubble)
     {
         selectedBubble = bubble;
-        currentLine = Instantiate(lineRendererPrefab, bubble.transform.parent);
-        currentLine.transform.position = bubble.transform.position;
+        currentLine = Instantiate(lineRendererPrefab);
+        currentLine.positionCount = 2;
+        currentLine.SetPosition(0, bubble.GetWorldPosition());
     }
 
     public void ReleaseBubble()
@@ -71,11 +76,10 @@ public class MiniGame_Manager : MonoBehaviour
     {
         if (currentLine != null)
         {
-            Vector2 mousePosition;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                currentLine.transform.parent as RectTransform,
-                Input.mousePosition, null, out mousePosition);
-            currentLine.transform.localPosition = mousePosition;
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition.z = 10; // Set this to an appropriate distance from the camera
+            Vector3 worldPosition = uiCamera.ScreenToWorldPoint(mousePosition);
+            currentLine.SetPosition(1, worldPosition);
         }
     }
 

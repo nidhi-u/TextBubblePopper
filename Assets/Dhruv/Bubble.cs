@@ -15,4 +15,9 @@ public class Bubble : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         MiniGame_Manager.Instance.ReleaseBubble();
     }
+    public Vector3 GetWorldPosition()
+    {
+        RectTransform rect = GetComponent<RectTransform>();
+        return rect.TransformPoint(rect.rect.center);
+    }
 }
