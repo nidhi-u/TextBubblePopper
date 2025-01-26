@@ -10,6 +10,7 @@ public class ConvoManager : MonoBehaviour
     [SerializeField] private ConvoSO convoSO;
     [SerializeField] private TMP_Text text;
     [SerializeField] private GameObject textImg;
+    
 
     // Start is called before the first frame update
     void Start()
