@@ -8,12 +8,11 @@ public class MiniGame_Manager : MonoBehaviour
 {
     public static MiniGame_Manager Instance;
 
-    public LineRenderer lineRendererPrefab;
-    private LineRenderer currentLine;
+
+   // public Image lineRendererPrefab;
+   // private Image currentLine;
     private Bubble selectedBubble;
     private List<Bubble> bubbles = new List<Bubble>();
-
-    public Camera uiCamera;
 
     private void Awake()
     {
@@ -25,8 +24,6 @@ public class MiniGame_Manager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        //uiCamera = Camera.main;
     }
 
     private void Start()
@@ -38,14 +35,14 @@ public class MiniGame_Manager : MonoBehaviour
     public void SelectBubble(Bubble bubble)
     {
         selectedBubble = bubble;
-        currentLine = Instantiate(lineRendererPrefab);
-        currentLine.positionCount = 2;
-        currentLine.SetPosition(0, bubble.GetWorldPosition());
+        Debug.Log("buuble :" + selectedBubble);
+        //currentLine = Instantiate(lineRendererPrefab, bubble.transform.parent);
+        //currentLine.transform.position = bubble.transform.position;
     }
 
     public void ReleaseBubble()
     {
-        if (selectedBubble != null && currentLine != null)
+        if (selectedBubble != null)
         {
             GameObject hitObject = GetObjectUnderMouse();
 
@@ -67,20 +64,21 @@ public class MiniGame_Manager : MonoBehaviour
                 }
             }
 
-            Destroy(currentLine.gameObject);
+           // Destroy(currentLine.gameObject);
             selectedBubble = null;
         }
     }
 
     private void Update()
     {
-        if (currentLine != null)
+/*        if (currentLine != null)
         {
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = 10; // Set this to an appropriate distance from the camera
-            Vector3 worldPosition = uiCamera.ScreenToWorldPoint(mousePosition);
-            currentLine.SetPosition(1, worldPosition);
-        }
+            Vector2 mousePosition;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                currentLine.transform.parent as RectTransform,
+                Input.mousePosition, null, out mousePosition);
+           // currentLine.transform.localPosition = mousePosition;
+        }*/
     }
 
     private GameObject GetObjectUnderMouse()
@@ -93,6 +91,8 @@ public class MiniGame_Manager : MonoBehaviour
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, results);
 
+        GameObject rres = results[0].gameObject;
+        Debug.Log("awdawd:" + rres);
         return results.Count > 0 ? results[0].gameObject : null;
     }
 
