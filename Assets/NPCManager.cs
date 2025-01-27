@@ -8,7 +8,6 @@ public class NPCManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> npcs;
     private List<int> interacted = new List<int>();
-    private bool gameDone = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,27 +20,16 @@ public class NPCManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         while (interacted.Count < npcs.Count)
         {
-            if(gameDone)
+            int index = Random.Range(0, npcs.Count);
+            if (!interacted.Contains(index))
             {
-                int index = Random.Range(0, npcs.Count);
-                if (!interacted.Contains(index))
-                {
-                    npcs[index].SetActive(true);
-                    interacted.Add(index);
-                    gameDone = false;
-                }
-                
+                npcs[index].SetActive(true);
+                interacted.Add(index);
             }
-            // activate after first minigame is done
+            //yield return null;
             yield return new WaitForSeconds(2);
-
         }
         EndGame();
-    }
-
-    public void NextConvo()
-    {
-        gameDone = false;
     }
 
     void EndGame()

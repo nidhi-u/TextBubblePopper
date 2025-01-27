@@ -26,12 +26,12 @@ Transform:
   m_GameObject: {fileID: 290011994590132454}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 556.99133, y: 279.34866, z: -135.08347}
+  m_LocalPosition: {x: 552.33936, y: 286.33066, z: -129.90547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8664715758495723771}
-  m_Father: {fileID: 3098212415067562211}
+  m_Father: {fileID: 437380381711546226}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7045927985795910779
 MonoBehaviour:
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb7a93830073214fb47ef88c206feaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRendererPrefab: {fileID: 5689481705246307426, guid: a391a1947e68e694497a67175bfda93c, type: 3}
+  lineRendererPrefab: {fileID: 2318720613219803286, guid: a391a1947e68e694497a67175bfda93c, type: 3}
   uiCamera: {fileID: 0}
 --- !u!1 &675519161778585945
 GameObject:
@@ -155,6 +155,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2786988185079066468}
+  - {fileID: 3098212415067562211}
   m_Father: {fileID: 437380381711546226}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -253,12 +254,11 @@ Transform:
   m_GameObject: {fileID: 1987089604813196119}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.6519775, y: 6.9819946, z: 5.1780014}
+  m_LocalPosition: {x: -657.157, y: -337.703, z: -2.6899986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6937101897310025764}
-  m_Father: {fileID: 437380381711546226}
+  m_Children: []
+  m_Father: {fileID: 6451765011300470160}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4729174861535987114
 MonoBehaviour:
@@ -309,8 +309,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MiniGame_: {fileID: 675519161778585945}
-  MiniGame: {fileID: 0}
-  convo: {fileID: 0}
 --- !u!1 &2473756651328609678
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +340,7 @@ Transform:
   m_Children:
   - {fileID: 7721149739930149726}
   - {fileID: 4397836657215770331}
-  - {fileID: 3098212415067562211}
+  - {fileID: 6937101897310025764}
   - {fileID: 6451765011300470160}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
