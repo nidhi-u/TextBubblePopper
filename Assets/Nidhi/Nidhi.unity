@@ -11649,6 +11649,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Convo2
       objectReference: {fileID: 0}
+    - target: {fileID: 2473756651328609678, guid: 34f9a86750294db49bda0518383bc7c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6770792036134556538, guid: 34f9a86750294db49bda0518383bc7c0, type: 3}
       propertyPath: convo
       value: 
@@ -14922,7 +14926,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394347450}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 0f706ea809fac144586c7aaff0ec8bcc, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: fe1657e5cd9e96542ad76abbda99c7c4, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -14936,14 +14940,12 @@ VideoPlayer:
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 0.5
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
   m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
@@ -27326,10 +27328,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Convo3
       objectReference: {fileID: 0}
+    - target: {fileID: 2506291313937828406, guid: 34f9a86750294db49bda0518383bc7c0, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 366403153}
     - target: {fileID: 6770792036134556538, guid: 34f9a86750294db49bda0518383bc7c0, type: 3}
       propertyPath: convo
       value: 
       objectReference: {fileID: 763115439}
+    - target: {fileID: 6770792036134556538, guid: 34f9a86750294db49bda0518383bc7c0, type: 3}
+      propertyPath: MiniGame
+      value: 
+      objectReference: {fileID: 1190292106}
+    - target: {fileID: 7045927985795910779, guid: 34f9a86750294db49bda0518383bc7c0, type: 3}
+      propertyPath: uiCamera
+      value: 
+      objectReference: {fileID: 366403153}
+    - target: {fileID: 7045927985795910779, guid: 34f9a86750294db49bda0518383bc7c0, type: 3}
+      propertyPath: lineRendererPrefab
+      value: 
+      objectReference: {fileID: 5689481705246307426, guid: a391a1947e68e694497a67175bfda93c, type: 3}
     - target: {fileID: 8786708665857540594, guid: 34f9a86750294db49bda0518383bc7c0, type: 3}
       propertyPath: target
       value: 
@@ -44241,6 +44259,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4144507362530297262, guid: 0f7557140be19b74a93b5a8bd769db81, type: 3}
   m_PrefabInstance: {fileID: 1316158156}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1190292106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 290011994590132454, guid: 34f9a86750294db49bda0518383bc7c0, type: 3}
+  m_PrefabInstance: {fileID: 763115436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1190571083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57021,6 +57044,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b51878ef881ad56419ea7798b772250c, type: 2}
+    - target: {fileID: 1653518082597715886, guid: 7090bba70ffbb12468651e11c4e9c262, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1739981356030158933, guid: 7090bba70ffbb12468651e11c4e9c262, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -72829,6 +72856,10 @@ PrefabInstance:
     - target: {fileID: 2473756651328609678, guid: 34f9a86750294db49bda0518383bc7c0, type: 3}
       propertyPath: m_Name
       value: Convo1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473756651328609678, guid: 34f9a86750294db49bda0518383bc7c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6770792036134556538, guid: 34f9a86750294db49bda0518383bc7c0, type: 3}
       propertyPath: convo

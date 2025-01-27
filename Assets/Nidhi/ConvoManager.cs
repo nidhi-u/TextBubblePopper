@@ -36,6 +36,8 @@ public class ConvoManager : MonoBehaviour
             text.gameObject.transform.Rotate(0, 180, 0, Space.Self);
             yield return new WaitForSeconds(2.5f);
         }
+
+
     }
     
 }
